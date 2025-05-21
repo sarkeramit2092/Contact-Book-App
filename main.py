@@ -31,9 +31,13 @@ while True:
         else:
             print("Book not Found!!")
     
-    elif choice == 3:
-        name = input("Enter Book ")
-
-
-
-
+    elif choice == "3":
+        name = input("Enter Book Name to Update: ")
+        if name in book_list:
+            author = input("Enter Update Author Name: ")
+            price = input("Enter Update Price: ")
+            review = input("Enter your Updated short Review: ")
+            book_list[name] = {"author":author, "price":int(price), "review":review}
+            print(f"Book Name: {name} has been Updated successfully!!")
+        else:
+            print("Book not Found!!")
