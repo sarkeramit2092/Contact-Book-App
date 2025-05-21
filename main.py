@@ -26,7 +26,6 @@ while True:
     elif choice == "2":
         name = input("Enter Book Name: ")
         if name in book_list:
-            book_list = book_list[name]
             print (f"Book Name: {name}, author:{author}, price:{int(price)}, review:{review}")
         else:
             print("Book not Found!!")
@@ -41,3 +40,27 @@ while True:
             print(f"Book Name: {name} has been Updated successfully!!")
         else:
             print("Book not Found!!")
+    
+    elif choice == "4":
+        name = input("Enter Book Name to Delete: ")
+        if name in book_list:
+            del book_list[name]
+            print(f"{name} -Book has been Deleted!!")
+        else:
+            print("Book not Found!!")
+
+    elif choice == "5":
+        search_name = input("Enter Book Name to Get Details: ")
+        found = False
+        for name, book in book_list.items():
+          if search_name.lower() in name.lower():
+            print (f"Found Book -author:{author}, price:{int(price)}, review:{review}")
+            found = True
+        if not found:
+            print ("Book not Found!!")
+
+    elif choice == "6":
+        print(f"You have {len(book_list)} Numbers of Books!!")
+
+    elif choice == "7":
+        quit()
